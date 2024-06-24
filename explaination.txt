@@ -1,0 +1,17 @@
+Detailed Explanation of the Code:
+Initialization:
+
+maxReach: Tracks the farthest airport we can reach using the current set of planes.
+steps: Tracks the remaining steps we can take with the current plane.
+planes: Counts the number of planes hired. We start by hiring the first plane.
+Iteration:
+
+For Loop: We iterate through each airport starting from the second airport (index 1).
+Max Reach Check: If the current airport index i exceeds maxReach, it means it's impossible to proceed further, so we return -1.
+Destination Check: If the current airport index i is the last airport (n-1), we have reached our destination, so we return the number of planes hired.
+Update Max Reach: We update maxReach to be the maximum of the current maxReach and the farthest airport we can reach from the current airport (i + fuel[i]).
+Step Decrement: We decrement the steps because we have used one step to move to the current airport.
+Hire New Plane: If steps becomes 0, it means we need to hire a new plane. We increment the number of planes hired and update steps to the remaining distance we can cover (maxReach - i).
+Termination:
+
+If the loop completes without reaching the last airport, we return -1 indicating it's not possible to reach the destination.
